@@ -1,0 +1,151 @@
+<div class="jumbotron jumbotron-fluid centrado">
+  <div class="container">
+    <div class="card text-left">
+
+      <div class="card-body">
+        <h1 class="h3 mb-3 fw-normal text-center">Generar Block Nota</h1>
+        <form name='formNota' [formGroup]='formNota'>
+
+
+          <!--Campo Nombre-->
+          <div class="form-group row">
+            <label class="col-form-label col-sm-2 col-sm-offset-2" for="Nombre">Nombre Alumno <span
+                class="text-danger">*</span></label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" formControlName="nombre" [ngClass]="{'is-invalid': (formNota.controls.nombre.touched || submitted)  
+                && formNota.controls.nombre.errors}" />
+
+              <span class="text-danger" *ngIf="(formNota.controls.nombre.touched || submitted) 
+                            && formNota.controls.nombre.errors?.required">
+                Dato requerido.
+              </span>
+            </div>
+            <span class="text-danger" *ngIf="(formNota.controls.nombre.touched || submitted) 
+                       && (formNota.controls.nombre.errors?.minlength || formNota.controls.nombre.errors?.maxlength) ">
+              Dato texto, 4 a 55 caracteres.
+            </span>
+          </div>
+
+          <!--Campo Apellido-->
+          <div class="form-group row">
+            <label class="col-form-label col-sm-2 col-sm-offset-2" for="apellido">Apellido Alumno <span
+                class="text-danger">*</span></label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" formControlName="apellido" [ngClass]="{'is-invalid': (formNota.controls.apellido.touched || submitted)  
+                && formNota.controls.apellido.errors}" />
+
+              <span class="text-danger" *ngIf="(formNota.controls.apellido.touched || submitted) 
+                            && formNota.controls.apellido.errors?.required">
+                Dato requerido.
+              </span>
+            </div>
+            <span class="text-danger"
+              *ngIf="(formNota.controls.apellido.touched || submitted) 
+                       && (formNota.controls.apellido.errors?.minlength || formNota.controls.apellido.errors?.maxlength) ">
+              Dato texto, 4 a 55 caracteres.
+            </span>
+          </div>
+
+          <!--Campo Legajo-->
+          <div class="row form-group">
+            <label class="col-form-label col-sm-2 col-sm-offset-2" for="legajo">Legajo<span
+                class="text-danger">*</span></label>
+            <div class="col-sm-6">
+              <input type="number" name="legajo" class="form-control" formControlName="legajo" [ngClass]="{'is-invalid': (formNota.controls.nota.touched || submitted)  
+            && formNota.controls.legajo.errors}" />
+              <span class="text-danger" *ngIf="(formNota.controls.legajo.touched || submitted) 
+                       && formNota.controls.legajo.errors?.required">
+                Dato requerido.
+              </span>
+              <span class="text-danger" *ngIf="(formNota.controls.legajo.touched || submitted) 
+               && formNota.controls.legajo.errors?.pattern">
+                Dato numérico.
+              </span>
+            </div>
+          </div>
+
+          <!--Campo Nota-->
+          <div class="row form-group">
+            <label class="col-form-label col-sm-2 col-sm-offset-2" for="nota">Nota <span
+                class="text-danger">*</span></label>
+            <div class="col-sm-6">
+              <input type="number" name="nota" min="0" max="10" class="form-control" formControlName="nota" [ngClass]="{'is-invalid': (formNota.controls.nota.touched || submitted)  
+            && formNota.controls.nota.errors}" />
+              <span class="text-danger" *ngIf="(formNota.controls.nota.touched || submitted) 
+                       && formNota.controls.nota.errors?.required">
+                Dato requerido.
+              </span>
+              <span class="text-danger" *ngIf="(formNota.controls.nota.touched || submitted) 
+               && formNota.controls.nota.errors?.pattern">
+                Dato numérico, 0-10.
+              </span>
+            </div>
+          </div>
+
+          <!--Campo Año-->
+          <div class="row form-group">
+            <label class="col-form-label col-sm-2 col-sm-offset-2" for="anno">Año <span
+                class="text-danger">*</span></label>
+            <div class="col-sm-6">
+              <input type="number" name="anno" min="0" max="10" class="form-control" formControlName="anno" [ngClass]="{'is-invalid': (formNota.controls.anno.touched || submitted)  
+            && formNota.controls.anno.errors}" />
+              <span class="text-danger" *ngIf="(formNota.controls.anno.touched || submitted) 
+                       && formNota.controls.anno.errors?.required">
+                Dato requerido.
+              </span>
+              <span class="text-danger" *ngIf="(formNota.controls.anno.touched || submitted) 
+               && formNota.controls.anno.errors?.pattern">
+                Dato numérico.
+              </span>
+            </div>
+          </div>
+
+          <!--Campo Numero de Instancia -->
+          <div class="row form-group">
+            <label class="col-form-label col-sm-2 col-sm-offset-2" for="numero">Numero de Instancia<span
+                class="text-danger">*</span></label>
+            <div class="col-sm-6">
+              <input type="number" name="numero" min="0" max="10" class="form-control" formControlName="numero"
+                [ngClass]="{'is-invalid': (formNota.controls.numero.touched || submitted)  
+            && formNota.controls.numero.errors}" />
+              <span class="text-danger" *ngIf="(formNota.controls.numero.touched || submitted) 
+                       && formNota.controls.numero.errors?.required">
+                Dato requerido.
+              </span>
+              <span class="text-danger" *ngIf="(formNota.controls.numero.touched || submitted) 
+               && formNota.controls.numero.errors?.pattern">
+                Dato numérico.
+              </span>
+            </div>
+          </div>
+
+          <!--CampoTipo -->
+          <div class="row form-group">
+            <label class="col-form-label col-sm-2 col-sm-offset-2" for="tipo">Tipo<span
+                class="text-danger">*</span></label>
+            <div class="col-sm-6">
+              <input type="number" name="tipo" min="0" max="10" class="form-control" formControlName="tipo" [ngClass]="{'is-invalid': (formNota.controls.tipo.touched || submitted)  
+            && formNota.controls.tipo.errors}" />
+              <span class="text-danger" *ngIf="(formNota.controls.tipo.touched || submitted) 
+                       && formNota.controls.tipo.errors?.required">
+                Dato requerido.
+              </span>
+              <span class="text-danger" *ngIf="(formNota.controls.tipo.touched || submitted) 
+               && formNota.controls.tipo.errors?.pattern">
+                Dato numérico.
+              </span>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button class="w-100 btn btn-lg btn-primary" type="submit" (click)='guardar()'>Guardar</button>
+            <br>
+            <button class="w-100 btn btn-lg btn-secondary" type="submit" (click)='reiniciar()'>Borrar todo</button>
+          </div>
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
