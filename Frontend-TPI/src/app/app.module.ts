@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ProfesoresComponent } from './components/profesores/profesores.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HttpClient } from '@angular/common/http';
     BrowserModule,
     ReactiveFormsModule,
     routing,
+    HttpClientModule,
     
     
   ],
