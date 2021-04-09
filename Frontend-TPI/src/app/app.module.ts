@@ -9,12 +9,14 @@ import { ProfesoresComponent } from './components/profesores/profesores.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
+import { AlumnosComponent } from './components/alumnos/alumnos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ProfesoresComponent
+    ProfesoresComponent,
+    AlumnosComponent
   ],
   imports: [
     BrowserModule,

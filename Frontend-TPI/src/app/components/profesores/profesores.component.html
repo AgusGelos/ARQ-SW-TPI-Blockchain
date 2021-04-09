@@ -3,7 +3,7 @@
     <div class="card text-left">
 
       <div class="card-body">
-        <h1 class="h3 mb-3 fw-normal text-center">Generar Block Nota</h1>
+        <h1 class="h3 mb-3 fw-normal text-center">Generar Nota</h1>
         <form name='formNota' [formGroup]='formNota'>
 
 
@@ -25,6 +25,7 @@
               Dato texto, 4 a 55 caracteres.
             </span>
           </div>
+          <br>
 
           <!--Campo Apellido-->
           <div class="form-group row">
@@ -45,6 +46,7 @@
               Dato texto, 4 a 55 caracteres.
             </span>
           </div>
+          <br>
 
           <!--Campo Legajo-->
           <div class="row form-group">
@@ -64,6 +66,7 @@
             </div>
           </div>
 
+          <br>
           <!--Campo Nota-->
           <div class="row form-group">
             <label class="col-form-label col-sm-2 col-sm-offset-2" for="nota">Nota <span
@@ -81,7 +84,7 @@
               </span>
             </div>
           </div>
-
+          <br>
           <!--Campo Año-->
           <div class="row form-group">
             <label class="col-form-label col-sm-2 col-sm-offset-2" for="anno">Año <span
@@ -99,7 +102,7 @@
               </span>
             </div>
           </div>
-
+          <br>
           <!--Campo Numero de Instancia -->
           <div class="row form-group">
             <label class="col-form-label col-sm-2 col-sm-offset-2" for="numero">Numero de Instancia<span
@@ -118,6 +121,7 @@
               </span>
             </div>
           </div>
+          <br>
 
           <!--CampoTipo -->
           <div class="row form-group">
@@ -136,11 +140,16 @@
               </span>
             </div>
           </div>
+          <br>
 
           <div class="text-center">
-            <button class="w-100 btn btn-lg btn-primary" type="submit" (click)='guardar()'>Guardar</button>
-            <br>
-            <button class="w-100 btn btn-lg btn-secondary" type="submit" (click)='reiniciar()'>Borrar todo</button>
+            <button class="btn btn-lg btn-secondary w-25" type="submit" (click)='reiniciar()'>Borrar todo</button>
+            &nbsp;
+            <button class="btn btn-lg btn-primary w-25" type="submit" (click)='guardar()'>Guardar</button>
+            
+            
+            
+
           </div>
 
 

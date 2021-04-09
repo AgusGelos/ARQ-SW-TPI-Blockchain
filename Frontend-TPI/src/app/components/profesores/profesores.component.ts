@@ -42,7 +42,11 @@ export class ProfesoresComponent implements OnInit {
     this.block.numero = this.formNota.value.numero;
     this.block.tipo = this.formNota.value.tipo;
 
+    // Guardar
+
 
   }
-  reiniciar(){}
+  reiniciar(){
+    this.formNota.reset()
+  }
 }

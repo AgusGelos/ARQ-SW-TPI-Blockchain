@@ -1,0 +1,68 @@
+<div class="container" id='consulta_alumnos_div'>
+  <h3 class="text-center">Consulta de Notas</h3>
+
+  <form name="FormFiltro" [formGroup]='FormFiltro' class="bg-light">
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2 col-sm-offset-1">
+        Legajo:
+      </label>
+      <div class="col-sm-3">
+        <input type="number" name="legajo" class="form-control" formControlName="legajo" />
+      </div>
+      <br>
+
+      <label class="col-form-label col-sm-2 col-sm-offset-1">
+        Año:
+      </label>
+      <div class="col-sm-3">
+        <input type="number" name="anio" class="form-control" formControlName="anio" />
+      </div>
+    </div>
+      <br>
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2 col-sm-offset-1">
+        Instancia:
+      </label>
+      <div class="col-sm-3">
+        <input type="number" name="instancia" class="form-control" formControlName="instancia" />
+      </div>
+      <br>
+    </div>
+    <br>
+
+    <!-- Botones -->
+    <div class="row justify-content-center">
+      <button type="button" class="btn btn-primary" (click)="buscar()">
+        <span class="fas fa-search"> </span> Consultar
+      </button>
+    </div>
+  </form>
+  <br>
+
+  <!-- Tabla de resutados de busqueda -->
+  <div id="divTablaResultados">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th class="text-center">Legajo</th>
+          <th class="text-center">Nombre</th>
+          <th class="text-center">Nota</th>
+          <th class="text-center">Año</th>
+          <th class="text-center">Numero</th>
+          <th class="text-center">Tipo</th>
+
+        </tr>
+      </thead>
+      <tbody class='text-center'>
+        <tr *ngFor="let blk of Lista">
+          <td>{{blk.legajo}}</td>
+          <td>{{blk.nombre +  ' ' + blk.apellido}}</td>
+          <td>{{blk.nota}}</td>
+          <td>{{blk.anno}}</td>
+          <td>{{blk.numero}}</td>
+          <td>{{blk.tipo}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
