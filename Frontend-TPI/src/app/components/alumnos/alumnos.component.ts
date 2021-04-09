@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Block } from 'src/app/models/block';
+import { BlockService } from 'src/app/services/block.service';
 
 @Component({
   selector: 'app-alumnos',
@@ -9,13 +10,15 @@ import { Block } from 'src/app/models/block';
 })
 export class AlumnosComponent implements OnInit {
 
-  FormFiltro: FormGroup;
+  formFiltro: FormGroup;
   Lista: Block[];
 
-  constructor(public formBuilder: FormBuilder) { }
+  constructor(public formBuilder: FormBuilder,
+    private blockService: BlockService
+    ) { }
 
   ngOnInit(): void {
-    this.FormFiltro = this.formBuilder.group({
+    this.formFiltro = this.formBuilder.group({
       Legajo: [""],
       anio: [""],
       instancia: ['']      
@@ -24,8 +27,13 @@ export class AlumnosComponent implements OnInit {
   }
 
   buscar(){
-    
+    let leg = this.formFiltro.value.legajo;
+    let anio = this.formFiltro.value.anio;
+    let inst = this.formFiltro.value.instancia;
 
+    this.blockService.get(leg,inst,anio).subscribe((res:any)=>
+    this.Lista = res
+    )
   }
 
 }

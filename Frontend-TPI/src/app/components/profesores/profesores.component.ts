@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule  } from '@angular/forms';
 import { Block } from 'src/app/models/block';
+import { BlockService } from 'src/app/services/block.service';
 
 @Component({
   selector: 'app-profesores',
@@ -13,7 +14,8 @@ export class ProfesoresComponent implements OnInit {
   submitted = false;
   block: Block;
 
-  constructor(private formBuilder: FormBuilder,) { }
+  constructor(private formBuilder: FormBuilder,
+    private blockService: BlockService) { }
 
   ngOnInit(): void {
     this.formNota = this.formBuilder.group({
@@ -43,6 +45,12 @@ export class ProfesoresComponent implements OnInit {
     this.block.tipo = this.formNota.value.tipo;
 
     // Guardar
+    this.blockService.post(this.block).subscribe((res:any) =>{
+      this.formNota.reset()
+      this.submitted = false
+      alert('Nota cargada correctamente!!')
+    })
+    
 
 
   }
