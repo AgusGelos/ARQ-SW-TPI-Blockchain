@@ -36,11 +36,11 @@ export class LoginComponent implements OnInit {
     this.usuario.UserName = this.formLogin.value.email;
     this.usuario.Password = this.formLogin.value.password;    
 
-    //this.authService.login(this.usuario).subscribe(token => this.recibirToken(token),
-    //error => this.manejarError(error));
+    this.authService.login(this.usuario).subscribe(token => this.recibirToken(token),
+    error => this.manejarError(error));
   }
 
-  /* recibirToken(token) {
+  recibirToken(token) {
     localStorage.setItem('token', token.token);
     localStorage.setItem('tokenExpiration', token.expiration);
     this.router.navigate(["profesores"]);
@@ -48,10 +48,10 @@ export class LoginComponent implements OnInit {
 
   manejarError(error) {
     if (error && error.error) {
-      alert(error.error[""]);
+      alert(error.error["Usuario o Contraseña inválidos."]);
     }
   }
-  */
+  
 
 
 

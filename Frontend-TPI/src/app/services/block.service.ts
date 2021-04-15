@@ -7,8 +7,10 @@ import { Block } from '../models/block';
 })
 export class BlockService {
 
-  apiURL: '';
-  constructor(private httpClient: HttpClient) { }
+  apiURL: string;
+  constructor(private httpClient: HttpClient) { 
+    this.apiURL = '';
+  }
 
   post(block:Block){
     return this.httpClient.post(this.apiURL,block)

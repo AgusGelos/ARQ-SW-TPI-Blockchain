@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserInfo } from '../models/UserInfo';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +11,30 @@ export class AccountService {
   apiURL: string;
 
   constructor(private http: HttpClient) { 
-    this.apiURL = '.../api/login' ;
+    this.apiURL = '' ;
   }
+  headers: HttpHeaders = new HttpHeaders({
+    "Content-Type": "application/json"
+  });
  
 
   login(userInfo: UserInfo){     
-    return this.http.post(this.apiURL + "/authenticate", userInfo);
+    return this.http
+    .post(
+      this.apiURL,
+      { userInfo},
+      { headers: this.headers }
+    )
+  }
+
+  
+  login1(email:string , passwd: string){     
+    return this.http
+    .post(
+      this.apiURL,
+      { email, passwd},
+      { headers: this.headers }
+    )
   }
 
   obtenerToken(): string {
